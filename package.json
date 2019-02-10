@@ -1,7 +1,7 @@
 {
-  "name": "notes",
+  "name": "todo",
   "version": "1.0.0",
-  "description": "my first backbone notes project",
+  "description": "my backbone todo project",
   "main": "index.js",
   "scripts": {
     "webpack": "webpack",
