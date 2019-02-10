@@ -3,7 +3,6 @@ var Backbone = require('backbone');
 var _ = require('underscore');
 var $ = require('jquery');
 var StartView = require('./views/start-view');
-var Note = require('./models/note');
 var Notes = require('./collections/notes');
 var NotesView = require('./views/notes-view');
 var NavView = require('./views/nav-view');
