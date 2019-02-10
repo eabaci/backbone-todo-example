@@ -3,11 +3,15 @@ var _ = require('underscore');
 var $ = require('jquery');
 
 var Note = Backbone.Model.extend({
-  urlRoot: 'app/songs',
+  urlRoot: 'https://jsonplaceholder.typicode.com/todos',
   defaults: {
     title: 'Title',
     id: 0,
-    active: false
+    completed: false
+  },
+
+  toggle: function() {
+    this.set('completed', !this.get('completed'));
   }
 });
 

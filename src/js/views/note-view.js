@@ -10,13 +10,12 @@ var NoteView = Backbone.View.extend({
   },
 
   toggleNote: function() {
-    if (!this.model.get('active')) {
-      this.model.set('active', true);
-      this.$el.addClass('active');
-    } else {
-      this.model.set('active', false);
-      this.$el.removeClass('active');
-    }
+    this.model.toggle();
+    this.updateCompletedClass(this.model.get('completed'));
+  },
+
+  updateCompletedClass: function(completed) {
+    this.$el.toggleClass('completed', completed);
   },
 
   initialize: function(ops) {
@@ -25,7 +24,7 @@ var NoteView = Backbone.View.extend({
   },
   render: function() {
     this.$el.html(this.html);
-    if (this.model.get('active')) this.$el.addClass('active');
+    this.updateCompletedClass(this.model.get('completed'));
 
     return this;
   }

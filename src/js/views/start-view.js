@@ -20,7 +20,9 @@ var StartView = Backbone.View.extend({
   addTodo: function() {
     var title = this.$el.find('input').val();
     this.$el.find('input').val('');
-    this.model.add(new Note({ title: title, id: this.counter, active: false }));
+    this.model.add(
+      new Note({ title: title, id: this.counter, completed: false })
+    );
     this.counter++;
   }
 });

@@ -6,8 +6,8 @@ var Notes = require('../collections/notes');
 var Router = Backbone.Router.extend({
   routes: {
     all: 'allNotes',
-    active: 'activeNotes',
-    completed: 'completedNotes'
+    completed: 'completedNotes',
+    notcompleted: 'notCompletedNotes'
   },
 
   initialize: function(ops) {
@@ -18,12 +18,12 @@ var Router = Backbone.Router.extend({
   allNotes: function() {
     this.notesView.update(this.model);
   },
-  activeNotes: function() {
-    var notes = this.model.filter(noteModel => noteModel.get('active'));
+  completedNotes: function() {
+    var notes = this.model.filter(noteModel => noteModel.get('completed'));
     this.notesView.update(new Notes(notes));
   },
-  completedNotes: function() {
-    var notes = this.model.filter(noteModel => !noteModel.get('active'));
+  notCompletedNotes: function() {
+    var notes = this.model.filter(noteModel => !noteModel.get('completed'));
     this.notesView.update(new Notes(notes));
   }
 });
