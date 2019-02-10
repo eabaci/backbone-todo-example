@@ -10,6 +10,11 @@ var Router = require('./routers/router');
 
 Backbone.$(function() {
   var notes = new Notes();
+  notes.fetch({
+    success: function() {
+      console.log('notes', notes);
+    }
+  });
 
   var notesView = new NotesView({ model: notes });
   notesView.render();

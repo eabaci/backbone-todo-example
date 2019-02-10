@@ -5,7 +5,7 @@ var Note = require('../models/note');
 
 var Notes = Backbone.Collection.extend({
   model: Note,
-  url: 'api/notes'
+  url: 'https://jsonplaceholder.typicode.com/todos'
 });
 
 module.exports = Notes;
