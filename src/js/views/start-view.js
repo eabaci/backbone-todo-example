@@ -2,14 +2,15 @@ var Backbone = require('backbone');
 var _ = require('underscore');
 var $ = require('jquery');
 var Note = require('../models/note');
+var startViewTemplate = require('../templates/start-view-template.html');
 
 var StartView = Backbone.View.extend({
   el: '#startView',
   events: {
     'click button': 'addTodo'
   },
+  template: _.template(startViewTemplate),
   initialize: function(ops) {
-    this.template = _.template($('#startViewTemplate').html());
     this.html = this.template();
     this.counter = 0;
   },

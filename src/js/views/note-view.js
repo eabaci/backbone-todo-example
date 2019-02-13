@@ -1,6 +1,7 @@
 var Backbone = require('backbone');
 var _ = require('underscore');
 var $ = require('jquery');
+var noteViewTemplate = require('../templates/note-view-template.html');
 
 var NoteView = Backbone.View.extend({
   className: 'noteview',
@@ -8,6 +9,8 @@ var NoteView = Backbone.View.extend({
   events: {
     click: 'toggleNote'
   },
+
+  template: _.template(noteViewTemplate),
 
   toggleNote: function() {
     this.model.toggle();
@@ -19,7 +22,6 @@ var NoteView = Backbone.View.extend({
   },
 
   initialize: function(ops) {
-    this.template = _.template($('#noteViewTemplate').html());
     this.html = this.template(this.model.toJSON());
   },
   render: function() {

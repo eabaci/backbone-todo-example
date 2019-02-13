@@ -20,45 +20,5 @@
       <div id="notesView"></div>
       <div id="navView"></div>
     </div>
-
-    <script id="startViewTemplate" type="text/html">
-      <div class="container">
-        <div class="row">
-          <div class=col-sm-12><h1>todos!</h1></div>
-        </div>
-        <div class="row">
-          <div class="col-sm-8">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">@</span>
-              </div>
-              <input type="text" class="form-control" placeholder="What needs to be done" aria-label="todoLabel" aria-describedby="basic-addon1">
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <button type="button" class="btn btn-primary">Add</button>
-          </div>
-
-        </div>
-      </div>
-    </script>
-    <script id="navViewTemplate" type="text/html">
-      <div class="container">
-          <div class="row">
-              <ul class="nav justify-content-center">
-                <li class="nav-item"><p class="nav-link" data-url="all">all</p></li>
-                <li class="nav-item"><p class="nav-link" data-url="completed">completed</p></li>
-                <li class="nav-item"><p class="nav-link" data-url="notcompleted">not completed</p></li>
-              </ul>
-          </div>
-      </div>
-    </script>
-    <script id="noteViewTemplate" type="text/html">
-      <div class="container">
-        <div class="row">
-          <p><%- title %></p>
-        </div>
-      </div>
-    </script>
   </body>
 </html>

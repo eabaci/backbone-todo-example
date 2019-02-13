@@ -1,19 +1,19 @@
 var Backbone = require('backbone');
 var _ = require('underscore');
 var $ = require('jquery');
+var navViewTemplate = require('../templates/nav-view-template.html');
 
 var NavView = Backbone.View.extend({
   el: '#navView',
   events: {
     'click .nav-item': 'navView'
   },
+  template: _.template(navViewTemplate),
   initialize: function(ops) {
     this.router = ops.router;
-    this.template = _.template($('#navViewTemplate').html());
-    this.html = this.template();
   },
   render: function() {
-    this.$el.html(this.html);
+    this.$el.html(this.template());
     return this;
   },
   navView: function(e) {
