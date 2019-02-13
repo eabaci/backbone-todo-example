@@ -1,5 +1,19 @@
+#app {
+  width: 50%;
+  margin: auto;
+  background: #ded9d961;
+  padding: 40px;
+}
+
+h1 {
+  text-transform: uppercase;
+}
 .completed p {
   text-decoration: line-through;
+}
+
+.nav .nav-item {
+  cursor: pointer;
 }
 
 .nav .nav-link {
